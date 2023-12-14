@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
   float aspect = float(width) / heigth;
   float pixelAspect = 11.0f / 24.0f;
   char gradient[] = " .,;-=+*#%@";
-  int gradientSize = std::size(gradient) - 1;
+  int gradientSize = std::size(gradient) - 2;
 
   float circleRadius = 0.5;
   float gradientWide = 0.2;
@@ -36,11 +36,9 @@ int main(int argc, char **argv) {
         // animation
         x += sin(frame * 0.001);
 
-        // gradient calculating
-        float dCenter = x * x + y * y;
-        // if in center will be 0, because of -circleradius, else we calculate
-        // how strong is it witd division of 2
-        int brightness = (dCenter - circleRadius) / gradientWide;
+        // distance from center (|x|+|y|)^2
+        float dist = sqrt(x * x + y * y);
+        int brightness = (int)(1 / dist * 8) - 2;
 
         if (brightness > gradientSize)
           brightness = gradientSize;
