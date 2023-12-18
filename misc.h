@@ -1,19 +1,25 @@
 #pragma once
+#include "vec2.h"
+#include "vec3.h"
+#include <math.h>
 
 namespace myMisc {
 
-float clamp(float value, float min, float max);
+inline float clamp(float value, float min, float max) {
+  return fmax(fmin(value, max), min);
+}
 
-struct vec2 {
+inline float length(vec2 const &v) { return sqrt(v.x * v.x + v.y * v.y); }
+inline float length(vec3 const &v) {
+  return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+}
 
-  float x, y;
+inline float dot(vec3 const &a, vec3 const &b) {
+  return (a.x * b.x + a.y * b.y + a.z * b.z);
+}
 
-  vec2(float value) : x(value), y(value) {}
-  vec2(float _x, float _y) : x(_x), y(_y) {}
+inline vec3 norm(vec3 const &v) { return (v / length(v)); }
 
-  vec2 operator+(vec2 const &other) { return vec2(x + other.x, y + other.y); }
-  vec2 operator-(vec2 const &other) { return vec2(x - other.x, y - other.y); }
-  vec2 operator*(vec2 const &other) { return vec2(x * other.x, y * other.y); }
-  vec2 operator/(vec2 const &other) { return vec2(x / other.x, y / other.y); }
-};
+vec2 sphere(vec3 ro, vec3 rd, float r);
+
 } // namespace myMisc
