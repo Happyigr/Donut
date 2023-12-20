@@ -10,7 +10,7 @@ Maybe i will expand this project, and make something more of it, but i dont know
 
 In console on Linux:
 - `git clone https://github.com/Happyigr`
-- `g++ main.cpp -o main`
+- `g++ main.cpp misc.cpp terminal.cpp -o main`
 - `./main`
 
 Should be working :)
