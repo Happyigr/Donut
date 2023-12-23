@@ -20,6 +20,4 @@ inline float dot(vec3 const &a, vec3 const &b) {
 
 inline vec3 norm(vec3 const &v) { return (v / length(v)); }
 
-vec2 sphere(vec3 ro, vec3 rd, float r);
-
 } // namespace myMisc
