@@ -16,5 +16,4 @@ myMisc::Terminal::~Terminal() { endwin(); }
 void myMisc::Terminal::ShowContent(wchar_t *frame) {
   mvwprintw(stdscr, 0, 0, "%ls", frame);
   refresh();
-  usleep(10000);
 }
