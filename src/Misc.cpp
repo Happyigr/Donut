@@ -1,5 +1,4 @@
 #include "Misc.h"
-#include <math.h>
 
 myMisc::vec3 myMisc::rotateX(myMisc::vec3 a, double angle) {
   myMisc::vec3 b = a;
@@ -41,8 +40,8 @@ myMisc::vec2 myMisc::box(myMisc::vec3 ro, myMisc::vec3 rd, myMisc::vec3 boxSize,
   myMisc::vec3 k = abs(m) * boxSize;
   myMisc::vec3 t1 = -n - k;
   myMisc::vec3 t2 = -n + k;
-  float tN = fmax(fmax(t1.x, t1.y), t1.z);
-  float tF = fmin(fmin(t2.x, t2.y), t2.z);
+  float tN = fmax(fmax(t1.x, t1.z), t1.y);
+  float tF = fmin(fmin(t2.x, t2.z), t2.y);
   if (tN > tF || tF < 0.0)
     return myMisc::vec2(-1.0);
   myMisc::vec3 yzx = myMisc::vec3(t1.y, t1.z, t1.x);

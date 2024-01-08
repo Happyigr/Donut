@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
   int gradientSize = term.m_colors.size() - 2;
 
   wchar_t *screen = new wchar_t[term.m_width * term.m_heigth];
-  for (int t = 0;; t++) {
+  for (int t = 0; t < 10000; t++) {
     vec3 light = norm(vec3(-0.5, 0.5, -1.0));
     vec3 spherePos = vec3(0, 3, 0);
     for (int i = 0; i < term.m_width; i++) {
