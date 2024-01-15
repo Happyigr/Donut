@@ -1,4 +1,4 @@
-![image](https://github.com/Happyigr/Donut/assets/78278275/ac8afcba-9d9a-43a9-bb52-b2085d77e218)
+![image](https://github.com/Happyigr/Donut/assets/78278275/c9d12290-f02b-46e2-9e9c-505018875490)
 
 # Donut project with c++
 
